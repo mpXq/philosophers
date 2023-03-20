@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:35:28 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/19 11:57:38 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/19 17:23:18 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	verif(const char *str)
 	return (0);
 }
 
-static long	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	long	i;
 	long	y;

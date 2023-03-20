@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:15:20 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/19 11:42:38 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/19 17:23:39 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@
 # define WHT "\e[0;97m"
 
 #include <stdio.h>
+#include <pthread.h>
+#include <stdlib.h>
 
-int	error_gestion(int	ac, char ** av);
+int		error_gestion(int	ac, char ** av);
+long	ft_atol(const char *str);
 
 #endif
