@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:35:28 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/19 17:23:18 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/20 19:21:29 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,15 @@ static int	error_printer(int error)
 	return (1);
 }
 
-int	error_gestion(int ac, char** av)
+int	error_gestion(int ac, char **av)
 {
 	int	i;
 	int	error;
 
 	error = 0;
-	if (ac < 4)
+	if (ac < 5)
 		return (error_printer(error = 1));
-	if (ac > 5)
+	if (ac > 6)
 		return (error_printer(error = 2));
 	i = 0;
 	while (av[++i])
