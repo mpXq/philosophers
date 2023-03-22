@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:15:20 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/21 18:35:10 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/22 11:48:26 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,31 @@ typedef struct s_philo
 	int				as_eaten;
 }	t_philo;
 
+typedef struct s_values
+{
+	int		prev;
+	int		index;
+	size_t	time;
+	int		nb_of_meals;
+	size_t	last_meal;
+}	t_values;
+
 int		error_gestion(int ac, char **av);
 long	ft_atol(const char *str);
 t_philo	initializer(char **av);
 void	destroy_mutextab(t_philo *p);
 int		create_mutextab(t_philo *p);
 void	wait_pthreads(t_philo *p);
+
+//		PHILO MAIN		//
+size_t	gtime(void);
+void	ft_sleep(int timeobj, t_philo *p);
+int		all_as_eaten(t_philo *p);
+
+//		PHILO PHASES	//
+void	*philosophers(void	*arg);
+void	is_dead(t_philo *p, t_values *v);
+void	is_sleeping(t_philo *p, t_values *v);
+void	is_eating(t_philo *p, t_values *v);
 
 #endif
