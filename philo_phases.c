@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfaria-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 11:36:53 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/22 12:00:32 by pfaria-d         ###   ########.fr       */
+/*   Created: 2023/03/22 12:47:19 by pfaria-d          #+#    #+#             */
+/*   Updated: 2023/03/22 12:47:29 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************* */
+/* ************************************************************************** */
 
 #include "philosophers.h"
 
 void	is_eating(t_philo *p, t_values *v)
 {
-	printf("\n%d INDEX\n\n", v->index);
 	pthread_mutex_lock(&p->fork[v->prev]);
 	pthread_mutex_lock(&p->voix);
 	if (p->is_dead == FALSE)
@@ -42,7 +41,6 @@ void	is_eating(t_philo *p, t_values *v)
 
 void	is_sleeping(t_philo *p, t_values *v)
 {
-	printf("\n%d INDEX\n\n", v->index);
 	pthread_mutex_lock(&p->voix);
 	if (p->is_dead == FALSE)
 		printf(CYN "%lu %d is sleeping\n", gtime() - v->time, v->index + 1);
@@ -87,13 +85,13 @@ void	*philosophers(void	*arg)
 	v = initialize_values(p);
 	while (all_as_eaten(p) && p->is_dead == FALSE)
 	{
+		if (gtime() - v.last_meal > (size_t)p->time_to_die
+			&& p->is_dead == FALSE)
+			is_dead(p, &v);
 		if (p->can_eat[v.index] == FALSE && p->is_dead == FALSE)
 			is_eating(p, &v);
 		else if (p->can_sleep[v.index] == TRUE && p->is_dead == FALSE)
 			is_sleeping(p, &v);
-		if (gtime() - v.last_meal > (size_t)p->time_to_die
-			&& p->is_dead == FALSE)
-			is_dead(p, &v);
 	}
 	return (NULL);
 }

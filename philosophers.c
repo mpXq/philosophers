@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:08:27 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/22 11:58:27 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/22 12:45:43 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,8 @@ int	create_threadtab(t_philo *p)
 		if (i % 2)
 			usleep(100);
 		if (pthread_create(&p->threadtab[i], NULL, &philosophers, (void *)p) != 0)
-		{
-			usleep(12);
 			return (1);
-		}
+		usleep(12);
 		free(p->index);
 		i++;
 	}
