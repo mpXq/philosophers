@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:15:20 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/22 11:48:26 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:16:28 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_philo
 	t_boolean		*can_sleep;
 	t_boolean		*is_full;
 	t_boolean		is_dead;
+	size_t			*last_meal;
 	int				*index;
 	int				nb_of_philo;
 	int				time_to_die;
@@ -55,7 +56,6 @@ typedef struct s_values
 	int		index;
 	size_t	time;
 	int		nb_of_meals;
-	size_t	last_meal;
 }	t_values;
 
 int		error_gestion(int ac, char **av);
@@ -72,7 +72,6 @@ int		all_as_eaten(t_philo *p);
 
 //		PHILO PHASES	//
 void	*philosophers(void	*arg);
-void	is_dead(t_philo *p, t_values *v);
 void	is_sleeping(t_philo *p, t_values *v);
 void	is_eating(t_philo *p, t_values *v);
 

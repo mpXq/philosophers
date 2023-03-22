@@ -6,7 +6,7 @@
 /*   By: pfaria-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 10:34:58 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/21 18:35:49 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:09:00 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static void	initialize_status(t_philo *p)
 		p->can_eat[i] = FALSE;
 		p->can_sleep[i] = FALSE;
 		p->is_full[i] = FALSE;
+		p->last_meal[i] = gtime();
 		i++;
 	}
 }
@@ -67,6 +68,7 @@ t_philo	initializer(char **av)
 	p.can_eat = malloc(sizeof(t_boolean) * p.nb_of_philo);
 	p.can_sleep = malloc(sizeof(t_boolean) * p.nb_of_philo);
 	p.is_full = malloc(sizeof(t_boolean) * p.nb_of_philo);
+	p.last_meal = malloc(sizeof(size_t) * p.nb_of_philo);
 	p.time_to_die = ft_atol(av[2]);
 	p.time_to_eat = ft_atol(av[3]);
 	p.time_to_sleep = ft_atol(av[4]);
