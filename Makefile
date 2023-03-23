@@ -6,7 +6,7 @@
 #    By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/19 11:52:41 by pfaria-d          #+#    #+#              #
-#    Updated: 2023/03/23 11:51:43 by pfaria-d         ###   ########.fr        #
+#    Updated: 2023/03/23 14:02:48 by pfaria-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC 		= philosophers.c \
 			  utilities.c \
 			  utilities2.c \
 			  philo_phases.c \
+			  end_checker.c \
 
 SRCBONUS	= 
 

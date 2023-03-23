@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:54:13 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/23 11:26:33 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:41:07 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	all_eat(t_philo *p)
 	t_boolean	is_full;
 
 	i = 0;
-	while (i < p->as_eaten)
+	while (i < p->nb_of_philo)
 	{
 		pthread_mutex_lock(&p->data_race);
 		is_full = p->is_full[i];

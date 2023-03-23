@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:15:20 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/23 11:05:47 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:54:03 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ t_philo	initializer(char **av);
 void	destroy_mutextab(t_philo *p);
 int		create_mutextab(t_philo *p);
 void	wait_pthreads(t_philo *p);
+int		dead(t_philo *p, int i, size_t time);
+int		end(t_philo	*p);
 
 //		PHILO MAIN		//
 size_t	gtime(void);
