@@ -6,7 +6,7 @@
 /*   By: pfaria-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 10:34:58 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/22 14:09:00 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/23 10:49:52 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_philo	initializer(char **av)
 	p.time_to_die = ft_atol(av[2]);
 	p.time_to_eat = ft_atol(av[3]);
 	p.time_to_sleep = ft_atol(av[4]);
+	p.meals_end = FALSE;
 	p.as_eaten = -1;
 	initialize_status(&p);
 	if (av[5])

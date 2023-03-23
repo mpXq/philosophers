@@ -6,7 +6,7 @@
 /*   By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:15:20 by pfaria-d          #+#    #+#             */
-/*   Updated: 2023/03/22 14:16:28 by pfaria-d         ###   ########.fr       */
+/*   Updated: 2023/03/23 11:05:47 by pfaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ typedef struct s_philo
 	pthread_t		*threadtab;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	voix;
+	pthread_mutex_t	data_race;
 	t_boolean		*can_eat;
 	t_boolean		*can_sleep;
 	t_boolean		*is_full;
 	t_boolean		is_dead;
+	t_boolean		meals_end;
 	size_t			*last_meal;
 	int				*index;
 	int				nb_of_philo;
@@ -58,6 +60,11 @@ typedef struct s_values
 	int		nb_of_meals;
 }	t_values;
 
+//		UTILITIES		//
+size_t	gtime(void);
+void	ft_sleep(int timeobj, t_philo *p);
+int		all_eat(t_philo *p);
+void	ft_free(t_philo	*p);
 int		error_gestion(int ac, char **av);
 long	ft_atol(const char *str);
 t_philo	initializer(char **av);

@@ -6,7 +6,7 @@
 #    By: pfaria-d <pfaria-d@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/19 11:52:41 by pfaria-d          #+#    #+#              #
-#    Updated: 2023/03/22 11:46:43 by pfaria-d         ###   ########.fr        #
+#    Updated: 2023/03/23 11:51:43 by pfaria-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ GREEN			= \033[0;32m
 SRC 		= philosophers.c \
 			  error_management.c \
 			  utilities.c \
+			  utilities2.c \
 			  philo_phases.c \
 
 SRCBONUS	= 
